@@ -1,0 +1,65 @@
+.post-list {
+  @apply text-2xl 2xl:text-3xl list-decimal;
+  padding-left: 1rem;
+
+  li:not(:last-child) {
+    @apply mb-8 2xl:mb-16;
+  }
+
+  li {
+    color: #BDBDBD;
+    transition: color 300ms ease-in-out;
+
+    &.active {
+      color: #231F20;
+      text-decoration: underline;
+    }
+
+    &:hover {
+      color: #231F20;
+    }
+  }
+
+  a {
+    display: block;
+    padding-left: 1rem;
+    cursor: pointer;
+  }
+}
+
+.post-category {
+  @apply w-full text-left uppercase font-roboto border-b-[1px] pb-2;
+  color: #BDBDBD;
+  transition: color 300ms ease-in-out;
+
+  &.active {
+    color: #231F20;
+  }
+
+  &:hover {
+    color: #231F20;
+  }
+}
+
+.button {
+  padding: 1rem 1.5rem;
+  text-transform: uppercase;
+  font-family: 'Barlow', sans-serif;
+  transition: color 300ms ease-in-out, background-color 300ms ease-in-out;
+
+  &--primary {
+    @apply bg-white;
+
+    &:hover {
+      @apply bg-black text-white;
+    }
+  }
+
+  &--download {
+    @apply bg-red text-white;
+
+    &:hover {
+      @apply bg-black;
+    }
+  }
+}
