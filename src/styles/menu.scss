@@ -1,10 +1,13 @@
 .menu {
+  @apply lg:relative fixed w-full;
 
   &__list {
     display: flex;
+    align-items: center;
 
     li {
       max-width: 80px;
+      position: relative;
     }
   }
 
@@ -22,6 +25,124 @@
       font-size: 14px;
       text-align: center;
       margin-top: -5px;
+    }
+  }
+
+  &--mobile {
+    @apply lg:hidden flex justify-between py-4 h-16 items-center;
+
+
+    .menu__link {
+      @apply font-roboto block w-full;
+      font-size: 20px;
+    }
+
+    .menu__list--mobile {
+      @apply left-0 px-4 fixed bg-white w-full h-[calc(100vh-4rem)] overflow-y-scroll top-16 -translate-x-full duration-300;
+      > li {
+        @apply mb-4;
+      }
+    }
+
+    &.active {
+
+      .menu__list--mobile {
+        @apply translate-x-0;
+      }
+
+    }
+  }
+
+  .hamburger {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    @apply lg:hidden;
+
+    &:hover .bar {
+      @apply bg-black;
+    }
+
+    .bar {
+      @apply bg-black;
+      padding: 0;
+      height: 3px;
+      display: block;
+      border-radius: 4px;
+      transition: all 0.4s ease-in-out;
+      position: absolute;
+    }
+
+    .bar1 {
+      width: 24px;
+      top: 0;
+      right: 0;
+    }
+
+    .bar2,
+    .bar3 {
+      width: 18px;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+
+    .bar3 {
+      right: 0;
+    }
+
+    .bar4 {
+      width: 24px;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+
+  .active {
+    .hamburger {
+      .bar1 {
+        transform: translateX(40px);
+        background-color: transparent;
+      }
+
+      .bar2 {
+        transform: rotate(45deg);
+      }
+
+      .bar3 {
+        transform: rotate(-45deg);
+      }
+
+      .bar4 {
+        transform: translateX(-40px);
+        background-color: transparent;
+      }
+
+      .bar2,
+      .bar3 {
+        width: 24px;
+      }
+    }
+  }
+}
+
+.dropdown {
+  position: absolute;
+  top: 0;
+  background: #fff;
+  color: #1d1d1d;
+  z-index: 99;
+  @apply lg:hidden lg:shadow top-[calc(100%+10px)] lg:w-[275px] font-roboto uppercase text-xs flex flex-col;
+
+  li {
+    padding: 0.5rem 1rem;
+    width: 100%;
+    max-width: unset;
+
+    a {
+      display: inline-block;
+      width: 100%;
     }
   }
 }

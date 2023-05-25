@@ -1,0 +1,84 @@
+.copy {
+
+  a {
+    @apply text-red;
+
+    &:hover {
+      @apply underline;
+    }
+  }
+
+
+  h1, h2 {
+    @apply text-4xl 2xl:text-6xl;
+    line-height: 93.5%;
+    font-weight: 700;
+  }
+
+  ul {
+    @apply mt-6 text-xl;
+    list-style: disc;
+
+    li {
+      @apply mb-4 list-inside;
+      &:last-child {
+        @apply mb-6;
+      }
+    }
+  }
+
+  &--recipe {
+    h1, h2 {
+      @apply my-16;
+    }
+
+    p {
+      @apply mb-4;
+    }
+  }
+
+  &--post {
+    h2, h3, h4, h5, p {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &--multicolor {
+    h1 span {
+      @apply text-red font-bold;
+    }
+  }
+
+  blockquote {
+    @apply border-l-2 border-red pl-6;
+    font-style: italic;
+    line-height: 160%;
+    margin-bottom: 2rem;
+  }
+}
+
+.tags {
+  @apply text-grey-main uppercase text-xs font-roboto;
+}
+
+.divider {
+  height: 1px;
+  width: 100%;
+  @apply bg-black my-16;
+}
+
+.feature {
+  @apply text-xs font-roboto rounded-full border-black border h-16 w-16 flex items-center justify-center;
+  &--3\/5 {
+    @apply bg-orange border-orange;
+
+  }
+}
+
+.category-icon {
+  @apply font-roboto rounded-full border-black border h-16 w-16 flex items-center justify-center bg-black;
+}
+
+.nutrients {
+  @apply flex text-xs font-roboto uppercase justify-between mb-2 pb-1 border-b;
+}

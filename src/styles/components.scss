@@ -55,6 +55,26 @@
     }
   }
 
+  &--secondary {
+    @apply bg-black text-white border;
+
+    svg {
+      @apply duration-300 fill-white;
+    }
+
+
+    &:hover {
+      @apply bg-white text-black;
+
+      svg {
+        @apply fill-black;
+      }
+
+    }
+
+
+  }
+
   &--download {
     @apply bg-red text-white;
 
@@ -62,4 +82,18 @@
       @apply bg-black;
     }
   }
+}
+
+.zoom-marker {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  height: 50px;
+  width: 50px;
+  background: #fff;
+  border-radius: 999px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
 }

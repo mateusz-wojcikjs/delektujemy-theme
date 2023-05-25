@@ -1,0 +1,30 @@
+.search {
+  @apply bg-white fixed z-50 h-screen w-screen -top-full py-16;
+
+  &.active {
+    @apply top-0;
+  }
+
+  &__field {
+    @apply text-6xl w-full border-b-black border-b font-bold text-3xl lg:text-6xl;
+  }
+
+  &__container {
+    @apply grid grid-cols-3 gap-8 py-8 max-h-[70vh] md:max-h-[50vh] overflow-scroll grid-cols-1 md:grid-cols-results;
+
+  }
+
+  &__result {
+    @apply grid gap-x-8 grid-rows-search grid-cols-search-mobile md:grid-cols-search;
+  }
+
+  &__result-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-height: 2rem;
+    max-height: 6rem;
+  }
+}
